@@ -21,8 +21,6 @@ class Department:
 
     @staticmethod
     def get_distance_between_departments(department_one, department_two):
-        print("Calculando disntancia entre " + department_one.name + " y "
-              + department_two.name)
         result = get_haversine_distance(department_one.latitude, department_one.longitude,
                                         department_two.latitude, department_two.longitude)
 

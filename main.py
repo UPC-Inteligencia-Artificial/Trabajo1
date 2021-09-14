@@ -1,6 +1,7 @@
 import pandas as pd
 import random
 from department import Department
+from simulated_annealing import simulated_annealing
 
 
 def get_departments_list():
@@ -30,5 +31,8 @@ if __name__ == '__main__':
     for i in range(len(departments)):
         print(str(i) + ": " + departments[i].name + "---" + t_new[i].name)
 
+    best_route = simulated_annealing(departments)
+    for route in best_route:
+        print(route.name)
 
 

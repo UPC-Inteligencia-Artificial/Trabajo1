@@ -18,7 +18,6 @@ def simulated_annealing(route, iterations):
     t_best = route.copy()
     prob = 0
     for i in range(iterations):
-        print("temp = " + str(temp))
         t_new = t_actual.copy()
         rand1, rand2 = random.sample(range(len(t_actual) - 1), 2)
         t_new[rand1], t_new[rand2] = t_new[rand2], t_new[rand1]

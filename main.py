@@ -4,11 +4,11 @@ from department import Department
 
 def get_departments_list():
     departments_data = pd.read_csv("data/departamentos.csv")
-    departments = []
+    departments_list = []
     for i in range(len(departments_data["Departamentos"])):
         name = departments_data["Departamentos"][i]
         position = tuple(map(float, departments_data["Posicion"][i].split(', ')))
-        departments.append(Department(name, position))
+        departments_list.append(Department(name, position))
     return departments
 
 

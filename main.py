@@ -15,6 +15,6 @@ def get_departments_list():
 if __name__ == '__main__':
     departments = get_departments_list()
     for department in departments:
-        print(department.name)
+        print(department.name + " " + str(department.position))
     Department.get_distance_between_departments(departments[1], departments[2])
 

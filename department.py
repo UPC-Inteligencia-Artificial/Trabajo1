@@ -24,7 +24,7 @@ class Department:
         print("Calculando disntancia... entre " + department_one.name + " y "
               + department_two.name)
         result = get_haversine_distance(department_one.latitude, department_one.longitude,
-                                      department_two.latitude, department_two.longitude)
+                                        department_two.latitude, department_two.longitude)
 
         print(result)
         return result

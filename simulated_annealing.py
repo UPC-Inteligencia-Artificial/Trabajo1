@@ -8,5 +8,5 @@ def simulated_annealing(route):
     t_best = route
     t_new = route
     while temp > 0:
-        random.sample(range(route), 2)
+        random.sample(range(len(t_actual)), 2)
         return

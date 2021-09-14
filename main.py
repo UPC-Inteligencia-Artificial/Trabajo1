@@ -17,8 +17,13 @@ if __name__ == '__main__':
     departments = get_departments_list()
     for department in departments:
         print(department.name + " " + str(department.position))
+
     Department.get_distance_between_departments(departments[0], departments[1])
+
     initial_route = [i for i in range(len(departments))]
     random.shuffle(initial_route)
     print(initial_route)
+
+    unique_randoms = random.sample(range(len(departments)), 2)
+    print(unique_randoms)
 

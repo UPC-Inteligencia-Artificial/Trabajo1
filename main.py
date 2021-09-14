@@ -2,10 +2,6 @@ import pandas as pd
 from Department import Department
 
 
-def get_departments_data():
-    return pd.read_csv("data/departamentos.csv")
-
-
 def get_departments_list():
     departments_data = pd.read_csv("data/departamentos.csv")
     departments = []

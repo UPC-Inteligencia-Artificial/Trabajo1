@@ -23,6 +23,4 @@ class Department:
     def get_distance_between_departments(department_one, department_two):
         result = get_haversine_distance(department_one.latitude, department_one.longitude,
                                         department_two.latitude, department_two.longitude)
-
-        print(result)
         return result

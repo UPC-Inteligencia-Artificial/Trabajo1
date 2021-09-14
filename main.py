@@ -31,7 +31,7 @@ if __name__ == '__main__':
     for i in range(len(departments)):
         print(str(i) + ": " + departments[i].name + "---" + t_new[i].name)
 
-    best_route = simulated_annealing(departments)
+    best_route = simulated_annealing(departments, pow(10, 6))
     for route in best_route:
         print(route.name)
 

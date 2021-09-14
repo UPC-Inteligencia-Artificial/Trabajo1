@@ -10,14 +10,14 @@ def get_energy(route):
     return energy
 
 
-def simulated_annealing(route):
+def simulated_annealing(route, iterations):
     temp = 1000
     cooling_index = 0.003
     random.shuffle(route)
     t_actual = route.copy()
     t_best = route.copy()
     prob = 0
-    while temp > 0.0001:
+    for i in range(iterations):
         print("temp = " + str(temp))
         t_new = t_actual.copy()
         rand1, rand2 = random.sample(range(len(t_actual) - 1), 2)

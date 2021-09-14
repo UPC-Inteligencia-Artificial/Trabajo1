@@ -1,5 +1,5 @@
 import pandas as pd
-from Department import Department
+from department import Department
 
 
 def get_departments_list():

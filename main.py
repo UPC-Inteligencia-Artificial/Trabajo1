@@ -16,8 +16,8 @@ def get_departments_list():
 
 if __name__ == '__main__':
     departments = get_departments_list()
-    best_route = simulated_annealing(departments, 10000)
+    best_route = simulated_annealing(departments, 1000)
     for route in best_route:
-        print(route.name)
+        print(route.name + " " + str(route.position))
 
 

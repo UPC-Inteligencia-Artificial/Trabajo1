@@ -35,5 +35,10 @@ def simulated_annealing(route, iterations):
             t_best = t_actual.copy()
         temp = (1 - cooling_index) * temp
 
+
+
+
+
+
     print(str(get_energy(t_best)) + "km")
     return t_best

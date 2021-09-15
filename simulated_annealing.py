@@ -1,12 +1,13 @@
 import random
 import math
-from department import Department
+from department import Department, get_haversine_distance
 
 
 def get_energy(route):
     energy = 0
     for i in range(len(route)-1):
         energy += Department.get_distance_between_departments(route[i], route[i + 1])
+    energy += Department.get_distance_between_departments(route[len(route)-1], route[0])
     return energy
 
 

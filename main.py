@@ -6,7 +6,6 @@ import folium
 import pygame
 from selenium import webdriver
 
-
 def get_departments_list():
     departments_data = pd.read_csv("data/departamentos.csv")
     departments_list = []
@@ -50,23 +49,27 @@ if __name__ == '__main__':
                 opacity=1
             ).add_to(peru_map)
 
-    peru_map.save(r"C:\Users\diego\PycharmProjects\Trabajo1\map1.html")
-    driver = webdriver.Chrome()
-    driver.set_window_size(4000, 3000)  # choose a resolution
-    driver.get('map1.html')
+    peru_map.save(r"C:\Users\diego\PycharmProjects\Trabajo1\peru_map.html")
+
+    options = webdriver.ChromeOptions()
+    options.binary_location = r"C:\Program Files\Google\Chrome Beta\Application\chrome.exe"
+    chrome_driver_binary = r"C:\Users\diego\Desktop\chromedriver.exe"
+    driver = webdriver.Chrome(chrome_driver_binary, options=options)
+    driver.set_window_size(1080, 1020)  # choose a resolution
+    driver.get(r'C:\Users\diego\PycharmProjects\Trabajo1\peru_map.html')
     # You may need to add time.sleep(seconds) here
-    driver.save_screenshot('screenshot.png')
-    # pygame.init()
-    #
-    # screen = pygame.display.set_mode((400, 600))
-    # square = pygame.Surface((50, 70))
-    # bg = pygame.image.load("icon.png").convert()
-    # square.fill((0, 180, 250))
-    # while True:
-    #     screen.fill((128, 255, 128))
-    #     screen.blit(bg, (10, 50))
-    #     if pygame.event.get(pygame.QUIT):
-    #         break
-    #     pygame.display.update()
-    #
-    # pygame.quit()
+    driver.save_screenshot(r'C:\Users\diego\PycharmProjects\Trabajo1\peru_map.png')
+    pygame.init()
+
+    screen = pygame.display.set_mode((1080, 1020))
+    square = pygame.Surface((50, 70))
+    bg = pygame.image.load(r'C:\Users\diego\PycharmProjects\Trabajo1\peru_map.png').convert()
+    square.fill((0, 180, 250))
+    while True:
+        screen.fill((128, 255, 128))
+        screen.blit(bg, (10, 50))
+        if pygame.event.get(pygame.QUIT):
+            break
+        pygame.display.update()
+
+    pygame.quit()
